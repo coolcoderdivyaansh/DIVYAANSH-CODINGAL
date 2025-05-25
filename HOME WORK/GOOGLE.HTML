@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .logo {
+            margin-top: 120px;
+            margin-bottom: 30px;
+        }
+        .logo-text {
+            font-size: 80px;
+            font-weight: bold;
+            font-family: 'Product Sans', Arial, sans-serif;
+            letter-spacing: -5px;
+        }
+        .logo-text span:nth-child(1) { color: #4285F4; }
+        .logo-text span:nth-child(2) { color: #EA4335; }
+        .logo-text span:nth-child(3) { color: #FBBC05; }
+        .logo-text span:nth-child(4) { color: #4285F4; }
+        .logo-text span:nth-child(5) { color: #34A853; }
+        .logo-text span:nth-child(6) { color: #EA4335; }
+        .search-box {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+        }
+        .search-input {
+            width: 90%;
+            max-width: 540px;
+            padding: 14px 20px;
+            font-size: 18px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            outline: none;
+            box-shadow: 0 2px 5px rgba(60,64,67,.08);
+            transition: box-shadow 0.2s;
+        }
+        .search-input:focus {
+            box-shadow: 0 1px 6px rgba(32,33,36,.28);
+            border-color: #4285F4;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        .btn {
+            background: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+            font-size: 16px;
+            padding: 10px 24px;
+            margin: 0 6px;
+            cursor: pointer;
+            transition: border 0.2s;
+        }
+        .btn:hover {
+            border: 1px solid #c6c6c6;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #f2f2f2;
+            color: #5f6368;
+            font-size: 14px;
+            padding: 12px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <div class="logo-text">
+            <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+        </div>
+    </div>
+    <form class="search-box" action="https://www.google.com/search" method="GET" target="_blank">
+        <input class="search-input" type="text" name="q" autocomplete="off" autofocus>
+        <div class="buttons">
+            <button class="btn" type="submit">Google Search</button>
+            <button class="btn" type="submit" name="btnI" value="1">I'm Feeling Lucky</button>
+        </div>
+    </form>
+    <div class="footer">
+        Google Clone &copy; 2024
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Birla Mobile Invest App</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f6fa;
+            color: #222;
+        }
+        .app-header {
+            background: #d32f2f;
+            color: #fff;
+            padding: 1.2rem;
+            text-align: center;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 400px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            padding: 2rem 1.5rem;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 1.5rem auto;
+            width: 80px;
+        }
+        .input-group {
+            margin-bottom: 1.2rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        button {
+            width: 100%;
+            background: #d32f2f;
+            color: #fff;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #b71c1c;
+        }
+        .portfolio {
+            margin-top: 2rem;
+            background: #fbe9e7;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        @media (max-width: 500px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-header">
+        Aditya Birla Invest
+    </div>
+    <div class="container">
+        <img class="logo" src="https://wash4work.org/wp-content/uploads/sites/20/2022/09/Aditya-Birla-Group-Logo-Vector-600x600-1.jpg" alt="Aditya Birla Logo">
+        <form id="investForm">
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="input-group">
+                <label for="amount">Investment Amount (₹)</label>
+                <input type="number" id="amount" min="1000" required>
+            </div>
+            <div class="input-group">
+                <label for="plan">Select Plan</label>
+                <select id="plan" required>
+                    <option value="">--Choose Plan--</option>
+                    <option value="equity">Equity Fund</option>
+                    <option value="debt">Debt Fund</option>
+                    <option value="hybrid">Hybrid Fund</option>
+                </select>
+            </div>
+            <button type="submit">Invest Now</button>
+        </form>
+        <div class="portfolio" id="portfolio" style="display:none;">
+            <strong>Investment Successful!</strong><br>
+            <span id="portfolioDetails"></span>
+        </div>
+    </div>
+    <script>
+        document.getElementById('investForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const amount = document.getElementById('amount').value;
+            const plan = document.getElementById('plan').value;
+            let planName = '';
+            if(plan === 'equity') planName = 'Equity Fund';
+            else if(plan === 'debt') planName = 'Debt Fund';
+            else if(plan === 'hybrid') planName = 'Hybrid Fund';
+            document.getElementById('portfolioDetails').innerHTML =
+                `Hello <b>${name}</b>,<br>
+                You have invested <b>₹${amount}</b> in <b>${planName}</b>.`;
+            document.getElementById('portfolio').style.display = 'block';
+            document.getElementById('investForm').reset();
+        });
+    </script>
+</body>
+</html></div>

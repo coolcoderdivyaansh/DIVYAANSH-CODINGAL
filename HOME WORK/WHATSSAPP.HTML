@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whattswap - Chat App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin:0; font-family: Arial, sans-serif; background:#ece5dd; }
+        .container { display: flex; height: 100vh; }
+        .sidebar {
+            width: 300px; background: #075e54; color: #fff; display: flex; flex-direction: column;
+        }
+        .sidebar-header {
+            padding: 20px; font-size: 1.5em; font-weight: bold; background: #128c7e;
+        }
+        .contacts {
+            flex: 1; overflow-y: auto; padding: 10px 0;
+        }
+        .contact {
+            padding: 15px 20px; cursor: pointer; border-bottom: 1px solid #0b4f4a;
+        }
+        .contact:hover { background: #128c7e; }
+        .chat-area {
+            flex: 1; display: flex; flex-direction: column; background: #fff;
+        }
+        .chat-header {
+            padding: 20px; background: #075e54; color: #fff; font-weight: bold;
+        }
+        .messages {
+            flex: 1; padding: 20px; overflow-y: auto; background: #ece5dd;
+            display: flex; flex-direction: column;
+        }
+        .message {
+            max-width: 60%; margin-bottom: 10px; padding: 10px 15px; border-radius: 10px;
+            background: #dcf8c6; align-self: flex-end;
+        }
+        .message.received {
+            background: #fff; align-self: flex-start;
+        }
+        .chat-input {
+            display: flex; padding: 15px; background: #f0f0f0;
+        }
+        .chat-input input {
+            flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 20px;
+            outline: none; font-size: 1em;
+        }
+        .chat-input button {
+            margin-left: 10px; padding: 10px 20px; border: none; border-radius: 20px;
+            background: #25d366; color: #fff; font-weight: bold; cursor: pointer;
+            transition: background 0.2s;
+        }
+        .chat-input button:hover { background: #128c7e; }
+        @media (max-width: 700px) {
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; height: 200px; }
+            .chat-area { height: calc(100vh - 200px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">Whattswap</div>
+            <div class="contacts" id="contacts">
+                <div class="contact" onclick="selectContact('Alice')">Alice</div>
+                <div class="contact" onclick="selectContact('Bob')">Bob</div>
+                <div class="contact" onclick="selectContact('Charlie')">Charlie</div>
+            </div>
+        </div>
+        <div class="chat-area">
+            <div class="chat-header" id="chatHeader">Select a contact</div>
+            <div class="messages" id="messages"></div>
+            <form class="chat-input" id="chatForm" onsubmit="sendMessage(event)">
+                <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off" disabled>
+                <button type="submit" disabled>Send</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const chats = {
+            'Alice': [
+                { text: "Hi! How are you?", received: true },
+                { text: "I'm good, thanks!", received: false }
+            ],
+            'Bob': [
+                { text: "Hey, ready for the meeting?", received: true }
+            ],
+            'Charlie': []
+        };
+        let currentContact = null;
+
+        function selectContact(name) {
+            currentContact = name;
+            document.getElementById('chatHeader').textContent = name;
+            document.getElementById('messageInput').disabled = false;
+            document.querySelector('.chat-input button').disabled = false;
+            renderMessages();
+        }
+
+        function renderMessages() {
+            const messagesDiv = document.getElementById('messages');
+            messagesDiv.innerHTML = '';
+            if (!currentContact) return;
+            chats[currentContact].forEach(msg => {
+                const div = document.createElement('div');
+                div.className = 'message' + (msg.received ? ' received' : '');
+                div.textContent = msg.text;
+                messagesDiv.appendChild(div);
+            });
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function sendMessage(e) {
+            e.preventDefault();
+            const input = document.getElementById('messageInput');
+            const text = input.value.trim();
+            if (!text || !currentContact) return;
+            chats[currentContact].push({ text, received: false });
+            input.value = '';
+            renderMessages();
+            // Simulate reply
+            setTimeout(() => {
+                chats[currentContact].push({ text: "Auto-reply: " + text, received: true });
+                renderMessages();
+            }, 1000);
+        }
+    </script>
+</body>
+</html></form></div>

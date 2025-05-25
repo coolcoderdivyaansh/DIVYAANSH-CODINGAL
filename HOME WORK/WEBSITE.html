@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cool Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f7971e, #ffd200);
+            min-height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: gradientBG 10s ease-in-out infinite alternate;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .container {
+            background: rgba(0,0,0,0.5);
+            padding: 40px 60px;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 32px;
+        }
+        .cool-btn {
+            background: linear-gradient(90deg, #f7971e, #ffd200);
+            color: #222;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .cool-btn:hover {
+            transform: scale(1.07);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        }
+        .socials {
+            margin-top: 28px;
+        }
+        .socials a {
+            margin: 0 10px;
+            color: #ffd200;
+            font-size: 1.6rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .socials a:hover {
+            color: #f7971e;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Cool Website!</h1>
+        <p>Explore awesome content, creative ideas, and more. This is your space to shine online!</p>
+        <button class="cool-btn" onclick="alert('Thanks for visiting!')">Say Hi!</button>
+        <div class="socials">
+            <a href="https://github.com/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</body>
+</html></div>

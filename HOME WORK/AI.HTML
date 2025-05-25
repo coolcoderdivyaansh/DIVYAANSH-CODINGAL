@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyTube</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+        }
+        header {
+            background: #202020;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .menu-icon {
+            font-size: 1.5em;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff0000;
+            margin-right: 20px;
+            letter-spacing: -2px;
+        }
+        .search-bar {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar input {
+            width: 400px;
+            padding: 8px;
+            border: none;
+            border-radius: 2px 0 0 2px;
+            font-size: 1em;
+        }
+        .search-bar button {
+            padding: 8px 16px;
+            border: none;
+            background: #e5e5e5;
+            border-radius: 0 2px 2px 0;
+            cursor: pointer;
+        }
+        .upload-btn {
+            margin-left: 20px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.3em;
+            cursor: pointer;
+        }
+        .profile {
+            margin-left: 20px;
+            width: 36px;
+            height: 36px;
+            background: #888;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;}
+        nav li {
+            padding: 12px 24px;
+            cursor: pointer;
+            color: #333;
+        }
+        nav li:hover {
+            background: #f1f1f1;
+        }
+        .videos {
+            flex: 1;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        .video-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px #eee;
+            transition: box-shadow 0.2s;
+        }
+        .video-card:hover {
+            box-shadow: 0 4px 16px #ccc;
+        }
+        .video-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .video-info {
+            padding: 12px;
+        }
+        .video-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+            color: #222;
+        }
+        .video-channel {
+            color: #666;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="logo">MyTube</span>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>🔍</button>
+        </div>
+        <div class="profile">D</div>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Trending</li>
+                <li>Subscriptions</li>
+                <li>Library</li>
+                <li>History</li>
+            </ul>
+        </nav>
+        <section class="videos">
+            <div class="video-card">
+                <img class="video-thumb" src="https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg" alt="Video Thumbnail">
+                <div class="video-info">
+                    <div class="video-title">Sample Video 1</div>
+                    <div class="video-channel">Channel Name</div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="video-thumb" src="https://i.ytimg.com/vi/ScMzIvxBSi4/hqdefault.jpg" alt="Video Thumbnail">
+                <div class="video-info">
+                    <div class="video-title">Sample Video 2</div>
+                    <div class="video-channel">Another Channel</div>
+                </div>
+            </div>
+            <div class="video-card">
+                <img class="video-thumb" src="https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg" alt="Video Thumbnail">
+                <div class="video-info">
+                    <div class="video-title">Sample Video 3</div>
+                    <div class="video-channel">Cool Channel</div>
+                </div>
+            </div>
+            <!-- Add more video cards as needed -->
+        </section>
+    </main>
+</body>
+</html></div></section></div>
